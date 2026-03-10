@@ -7,7 +7,8 @@ impove on using python, and create a functional GUI to display info
 
 
 Ways to improve
-- Update the search so that it works with different inputs (zip; city, state)
+- ~Update the search so that it works with different inputs (zip; city, state)~ DONE
 - Update the display of information to make it more readable
+    - Readable, but not pretty
 |- Be able to add pictures based on the type of weather
 
