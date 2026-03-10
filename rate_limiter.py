@@ -6,7 +6,6 @@ COUNTER_FILE = "api_counter.json"
 
 
 def _load_counter() -> dict:
-    """Load counter data from disk, or return a fresh structure."""
     if os.path.exists(COUNTER_FILE):
         try:
             with open(COUNTER_FILE, "r") as f:
@@ -17,20 +16,11 @@ def _load_counter() -> dict:
 
 
 def _save_counter(data: dict) -> None:
-    """Persist counter data to disk."""
     with open(COUNTER_FILE, "w") as f:
         json.dump(data, f, indent=2)
 
 
 def check_and_increment(daily_limit: int, monthly_limit: int) -> tuple[bool, str]:
-    """
-    Check whether an API call is allowed, and if so, increment the counters.
-
-    Returns:
-        (allowed: bool, message: str)
-        - allowed is True if the call can proceed.
-        - message explains why a call was blocked, or shows current usage.
-    """
     today = datetime.now().strftime("%Y-%m-%d")
     this_month = datetime.now().strftime("%Y-%m")
 
